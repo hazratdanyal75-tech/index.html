@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="City ka naam likhein...">
+            <button id="search-btn">Check Karein</button>
+        </div>
+        <div class="weather-card" id="weather-info">
+            <h2 id="city-name">Shehar</h2>
+            <p id="temp">--°C</p>
+            <p id="description">Mausam ki surat-e-haal</p>
+            <div class="details">
+                <span>Humidity: <b id="humidity">--%</b></span>
+                <span>Wind: <b id="wind">-- km/h</b></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
