@@ -3,25 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Weather App</title>
+    <title>Elite Weather Pro Max</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="search-box">
-            <input type="text" id="city-input" placeholder="City ka naam likhein...">
-            <button id="search-btn">Check Karein</button>
+
+    <div class="weather-card animate-in">
+        <div id="weatherAlert" class="alert-box" style="display: none;">
+            <i class="fa-solid fa-triangle-exclamation"></i> <span id="alertMsg">Warning</span>
         </div>
-        <div class="weather-card" id="weather-info">
-            <h2 id="city-name">Shehar</h2>
-            <p id="temp">--°C</p>
-            <p id="description">Mausam ki surat-e-haal</p>
-            <div class="details">
-                <span>Humidity: <b id="humidity">--%</b></span>
-                <span>Wind: <b id="wind">-- km/h</b></span>
+
+        <div class="header-info">
+            <div id="liveClock">00:00:00</div>
+            <div class="unit-toggle">
+                <span id="unitC" class="active">°C</span> | <span id="unitF">°F</span>
             </div>
         </div>
+
+        <div class="search-section">
+            <input type="text" id="cityInput" placeholder="Shehar ka naam..." value="Malakand">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="advice-box" id="adviceBox">
+            <i class="fa-solid fa-lightbulb"></i> <span id="adviceText">Loading advice...</span>
+        </div>
+
+        <div class="main-info">
+            <h1 id="cityName">--</h1>
+            <div class="temp-container">
+                <img src="" id="weatherIcon" class="main-icon">
+                <h2 id="temp">--</h2>
+            </div>
+            <h3 id="description">--</h3>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="stats-grid">
+            <div class="stat-box"><i class="fa-solid fa-wind"></i><p>Hawa</p><span id="windSpeed">--</span></div>
+            <div class="stat-box"><i class="fa-solid fa-droplet"></i><p>Nami</p><span id="humidity">--</span></div>
+            <div class="stat-box"><i class="fa-solid fa-sun"></i><p>UV Index</p><span id="uvIndex">--</span></div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box"><i class="fa-solid fa-mask-ventilator"></i><p>AQI</p><span id="aqi">--</span></div>
+            <div class="stat-box"><i class="fa-solid fa-eye"></i><p>Visibility</p><span id="visibility">--</span></div>
+            <div class="stat-box"><i class="fa-solid fa-gauge-high"></i><p>Pressure</p><span id="pressure">--</span></div>
+        </div>
+
+        <div class="sun-times">
+            <div class="sun-item"><i class="fa-solid fa-sun"></i> Sunrise: <b id="sunrise">--:--</b></div>
+            <div class="sun-item"><i class="fa-solid fa-moon"></i> Sunset: <b id="sunset">--:--</b></div>
+        </div>
+
+        <div class="forecast-container">
+            <p class="section-title">Aglo 5 Din ka Haal</p>
+            <div class="forecast-list" id="dailyList"></div>
+        </div>
     </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
