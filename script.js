@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY_HERE"; 
+const apiKey = "12e66aee9a7b5c3141fc50e34412d03b"; 
 let currentUnit = "metric";
 let map = L.map('map').setView([34.50, 71.90], 10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
